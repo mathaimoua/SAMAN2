@@ -25,18 +25,18 @@ function LoginForm() {
   }; // end login
 
   return (
-    <form className="text-center mt-[100px] bg-slate-400 w-[80%] ml-auto mr-auto" onSubmit={login}>
+    <form className="text-center mt-[100px] rounded-md p-2 m-2 bg-slate-400 md:w-[40%] w-[80%] ml-auto mr-auto" onSubmit={login}>
       <h2>Login</h2>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
           {errors.loginMessage}
         </h3>
       )}
-      <div className='w-full flex justify-between items-center'>
+      <div className='w-full flex justify-center'>
         <label htmlFor="username">
           Username:
           <input
-            className='mb-2'
+            className='mb-2 ml-2 p-1'
             type="text"
             name="username"
             required
@@ -45,10 +45,11 @@ function LoginForm() {
           />
         </label>
       </div>
-      <div className='w-full flex justify-between items-center'>
+      <div className='w-full flex justify-center'>
         <label htmlFor="password">
           Password:
           <input
+            className='ml-2 p-1'
             type="password"
             name="password"
             required
@@ -58,7 +59,7 @@ function LoginForm() {
         </label>
       </div>
       <div>
-        <input className="btn" type="submit" name="submit" value="Log In" />
+        <button className='py-2 px-5 my-2'>Log In</button>
       </div>
     </form>
   );
