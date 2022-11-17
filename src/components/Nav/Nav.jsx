@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
-import {MenuIcon, XIcon} from '@heroicons/react/outline'
-import SideMenu from '../SideMenu/SideMenu';
+import {MenuIcon, XIcon, ArrowCircleLeftIcon} from '@heroicons/react/outline'
+
+
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -11,22 +12,27 @@ function Nav() {
   }
 
   return (
+    <div className='flex'>
+      {user.id && 
+    <div className={'bg-white h-full w-[20%] p-5 pt-8 text-black pt-[80px] absolute  bg-zinc-300'}>
+      <ul>
+        <li>Home</li>
+        <li>Location</li>
+        <li>Containers</li>
+        <li>Items</li>
+        <li>Logout</li>
+      </ul>
+    </div> }
     <div className='w-screen h-[80px] z-10 bg-slate-400 fixed drop-shadow-lg'>
       <div className='px-2 flex justify-between items-center w-full h-full'>
         <div className='flex items-center'>
           <h1 className='text-3xl font-bold mr-4 sm:text-4xl'>SAMAN</h1>
-          <ul className='hidden md:flex'>
-            <li>Home</li>
-            <li>Locations</li>
-            <li>Containers</li>
-            <li>About</li>
-            <li>Logout</li>
-          </ul>
         </div>
+        {!user.id ?
         <div className='hidden md:flex pr-4'>
           <button className='border-none bg-transparent text-black mr-4'>Sign In</button>
           <button className='px-8 py-3'>Sign Up</button>
-        </div>
+        </div> : <></> }
         <div className='md:hidden ' onClick={handleClick}>
           {!nav ? <MenuIcon className='w-5' /> : <XIcon className='w-5' /> }
         </div>
@@ -42,6 +48,8 @@ function Nav() {
               <button className='px-8 py-3'>Sign Up</button>
             </div>
       </ul>
+    </div>
+
     </div>
   );
 }
