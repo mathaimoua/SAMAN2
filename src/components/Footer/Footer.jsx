@@ -6,7 +6,7 @@ import React from 'react';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 function Footer() {
-  return <footer className='text-center md:ml-[18%]'>&copy; SAMAN</footer>;
+  return <footer className='text-center mt-1 md:ml-[18%]'>&copy; SAMAN</footer>;
 }
 
 export default Footer;

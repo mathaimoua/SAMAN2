@@ -55,7 +55,7 @@ function Nav() {
             </li>
           </ul>
           {/* Logout at bottom of Side Menu */}
-          <ul className="absolute bottom-0 w-full">
+          <ul className="absolute bottom-0 w-full mb-2">
             <a href="#" class="no-underline hover:no-underline ">
               <li
                 className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500"
@@ -68,10 +68,10 @@ function Nav() {
           </ul>
         </div>
       )}
-      <div className="w-screen h-[80px] z-10 bg-slate-400 fixed drop-shadow-lg">
+      <div className="w-screen h-[80px] z-10 bg-slate-400 fixed drop-shadow-lg md:ml-auto md:mr-auto">
         <div className="px-2 flex justify-between items-center w-full h-full">
           <div className="flex items-center">
-            <h1 className="text-3xl font-bold mr-4 md:text-4xl">SAMAN</h1>
+            <h1 className="text-3xl font-bold mr-4 pl-[8%] md:text-4xl ">SAMAN</h1>
           </div>
           {!user.id ? (
             <div className="hidden md:flex pr-4">
@@ -84,34 +84,34 @@ function Nav() {
             <></>
           )}
           <div className="md:hidden " onClick={handleClick}>
-            {!nav ? <MenuIcon className="w-5" /> : <XIcon className="w-5" />}
+            {!nav ? <MenuIcon className="w-7" /> : <XIcon className="w-7" />}
           </div>
         </div>
         {/* Mobile NavMenu */}
         <ul className={!nav ? "hidden" : "absolute bg-zinc-300  w-full"}>
           <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
-            <HomeIcon className="w-4 mr-2" />
-            Home
+            <HomeIcon className="w-6 mr-2" />
+            <p className='mt-1 text-lg'>Home</p>
           </li>
           <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
-            <LocationMarkerIcon className="w-4 mr-2" />
-            Locations
+            <LocationMarkerIcon className="w-6 mr-2" />
+            <p className='mt-1 text-lg'>Locations</p>
           </li>
           <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
-            <ArchiveIcon className="w-4 mr-2" />
-            Containers
+            <ArchiveIcon className="w-6 mr-2" />
+            <p className='mt-1 text-lg'>Containers</p>
           </li>
           <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
-            <PencilIcon className="w-4 mr-2" />
-            Items
+            <PencilIcon className="w-6 mr-2" />
+            <p className='mt-1 text-lg'>Items</p>
           </li>
           <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
-            <QuestionMarkCircleIcon className="w-4 mr-4" />
-            About
+            <QuestionMarkCircleIcon className="w-6 mr-2" />
+            <p className='mt-1 text-lg'>About</p>
           </li>
           <li className="w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
-            <LogoutIcon className="w-4 mr-4" />
-            Logout
+            <LogoutIcon className="w-6 mr-2" />
+            <p className='mt-1 text-lg'>Logout</p>
           </li>
           {!user.id && (
             <div className="flex flex-col my-4">
