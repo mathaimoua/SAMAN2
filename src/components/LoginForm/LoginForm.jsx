@@ -25,17 +25,18 @@ function LoginForm() {
   }; // end login
 
   return (
-    <form className="formPanel" onSubmit={login}>
+    <form className="text-center mt-[100px] bg-slate-400 w-[80%] ml-auto mr-auto" onSubmit={login}>
       <h2>Login</h2>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
           {errors.loginMessage}
         </h3>
       )}
-      <div>
+      <div className='w-full flex justify-between items-center'>
         <label htmlFor="username">
           Username:
           <input
+            className='mb-2'
             type="text"
             name="username"
             required
@@ -44,7 +45,7 @@ function LoginForm() {
           />
         </label>
       </div>
-      <div>
+      <div className='w-full flex justify-between items-center'>
         <label htmlFor="password">
           Password:
           <input
