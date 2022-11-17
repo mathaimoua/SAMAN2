@@ -29,39 +29,42 @@ function Nav() {
       {user.id && (
         <div
           className={
-            "h-full w-[18%] pl-0 pr-0 pt-8 text-black pt-[80px] absolute  bg-zinc-300 hidden md:block max-w-relative min-w-[150px]"
+            "h-full w-[18%] pl-0 pr-0 pt-8 text-black pt-[80px] absolute bg-zinc-300 hidden md:block max-w-relative min-w-[150px]"
           }
         >
           <ul>
-            <li className="ml-[0] pl-[8%] mb-4 flex hover:bg-zinc-500">
+            <li className="ml-[0] pl-[8%] mb-4 flex transition ease-in-out duration-200 hover:bg-zinc-500">
+              <HomeIcon className="w-4 mr-2" />
+              Home
+            </li>
+            <li className="ml-[0] pl-[8%] mb-4 flex transition ease-in-out duration-200 hover:bg-zinc-500">
               <LocationMarkerIcon className="w-4 mr-2" />
               Locations
             </li>
-            <li className="ml-[0] pl-[8%] mb-4 flex hover:bg-zinc-500">
+            <li className="ml-[0] pl-[8%] mb-4 flex transition ease-in-out duration-200 hover:bg-zinc-500">
               <ArchiveIcon className="w-4 mr-2" />
               Containers
             </li>
-            <li className="ml-[0] pl-[8%] mb-4 flex hover:bg-zinc-500">
+            <li className="ml-[0] pl-[8%] mb-4 flex transition ease-in-out duration-200 hover:bg-zinc-500">
               <PencilIcon className="w-4 mr-2" />
               Items
             </li>
-            <li className="ml-[0] pl-[8%] mb-4 flex hover:bg-zinc-500">
+            <li className="ml-[0] pl-[8%] mb-4 flex transition ease-in-out duration-200 hover:bg-zinc-500">
               <QuestionMarkCircleIcon className="w-4 mr-4" />
               About
             </li>
-            <a href="#" class="no-underline hover:no-underline">
+          </ul>
+          {/* Logout at bottom of Side Menu */}
+          <ul className='absolute bottom-0 w-full'>
+          <a href="#" class="no-underline hover:no-underline ">
               <li
-                className="ml-[0] pl-[8%] mb-4 flex hover:bg-zinc-500"
+                className="ml-[0] pl-[8%] mb-4 flex transition ease-in-out duration-200 hover:bg-zinc-500"
                 onClick={() => dispatch({ type: "LOGOUT" })}
               >
                 <LogoutIcon className="w-4 mr-4" />
                 Logout
               </li>
             </a>
-            <li className="ml-[0] pl-[8%] mb-4 flex hover:bg-zinc-500">
-              <HomeIcon className="w-4 mr-2" />
-              Home
-            </li>
           </ul>
         </div>
       )}
@@ -85,28 +88,28 @@ function Nav() {
           </div>
         </div>
         {/* Mobile NavMenu */}
-        <ul className={!nav ? "hidden" : "absolute bg-zinc-300  w-full px-8"}>
-          <li className="border-b-2 border-zinc-300 w-full flex">
+        <ul className={!nav ? "hidden" : "absolute bg-zinc-300  w-full"}>
+          <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
             <HomeIcon className="w-4 mr-2" />
             Home
           </li>
-          <li className="border-b-2 border-zinc-300 w-full flex">
+          <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
             <LocationMarkerIcon className="w-4 mr-2" />
             Locations
           </li>
-          <li className="border-b-2 border-zinc-300 w-full flex">
+          <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
             <ArchiveIcon className="w-4 mr-2" />
             Containers
           </li>
-          <li className="border-b-2 border-zinc-300 w-full flex">
+          <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
             <PencilIcon className="w-4 mr-2" />
             Items
           </li>
-          <li className="border-b-2 border-zinc-300 w-full flex">
+          <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
             <QuestionMarkCircleIcon className="w-4 mr-4" />
             About
           </li>
-          <li className="w-full flex">
+          <li className="w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
             <LogoutIcon className="w-4 mr-4" />
             Logout
           </li>
