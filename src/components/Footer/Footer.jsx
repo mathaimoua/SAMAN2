@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -6,7 +6,11 @@ import React from 'react';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 function Footer() {
-  return <footer className='text-center mt-1 md:ml-[18%]'>&copy; SAMAN</footer>;
+  return (
+    <footer className="mr-[1%] text-right mt-5 border-t-2 border-zinc-200">
+      &copy; SAMAN
+    </footer>
+  );
 }
 
 export default Footer;
