@@ -29,7 +29,7 @@ function Nav() {
       {user.id && (
         <div
           className={
-            "h-full w-[18%] pl-0 pr-0 pt-8 text-black pt-[80px] absolute bg-zinc-300 hidden md:block max-w-relative min-w-[150px]"
+            "h-full w-[18%] text-black pt-[60px] absolute bg-zinc-300 hidden md:block max-w-relative min-w-[150px]"
           }
         >
           <ul>
@@ -68,7 +68,8 @@ function Nav() {
           </ul>
         </div>
       )}
-      <div className="w-screen h-[80px] z-10 bg-slate-400 fixed drop-shadow-lg md:ml-auto md:mr-auto">
+      {/* NavBar */}
+      <div className="w-screen h-[60px] z-10 bg-slate-400 fixed border-b-3 border-zinc-600 md:ml-auto md:mr-auto">
         <div className="px-2 flex justify-between items-center w-full h-full">
           <div className="flex items-center">
             <h1 className="text-3xl font-bold mr-4 pl-[8%] md:text-4xl ">SAMAN</h1>

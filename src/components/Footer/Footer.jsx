@@ -7,9 +7,11 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="mr-[1%] text-right mt-5 border-t-2 border-zinc-200">
+    <div className='text-center'>
+    <div className="text-right ml-[1%] pr-[1%] md:ml-[19%] mr-[1%] bottom-1 mt-5 border-t-2 border-zinc-200">
       &copy; SAMAN
-    </footer>
+    </div>
+    </div>
   );
 }
 

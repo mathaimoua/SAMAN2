@@ -25,7 +25,7 @@ function LoginForm() {
   }; // end login
 
   return (
-    <form className="text-center mt-[100px] rounded-md p-2 m-2 bg-slate-400 md:w-[40%] w-[80%] ml-auto mr-auto" onSubmit={login}>
+    <form className="text-center mt-[100px] rounded-md p-2 m-2 md:w-[40%] w-[80%] ml-auto mr-auto" onSubmit={login}>
       <h2>Login</h2>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
@@ -34,12 +34,13 @@ function LoginForm() {
       )}
       <div className='w-full flex justify-center'>
         <label htmlFor="username">
-          Username:
           <input
-            className='mb-2 ml-2 p-1'
+            placeholder='Username'
+            className='mb-2 ml-2 p-1 rounded-md border-2 border-zinc-200'
             type="text"
             name="username"
             required
+            autoFocus={true}
             value={username}
             onChange={(event) => setUsername(event.target.value)}
           />
@@ -47,9 +48,9 @@ function LoginForm() {
       </div>
       <div className='w-full flex justify-center'>
         <label htmlFor="password">
-          Password:
           <input
-            className='ml-2 p-1'
+            placeholder='Password'
+            className='ml-2 p-1 rounded-md border-2 border-zinc-200'
             type="password"
             name="password"
             required
