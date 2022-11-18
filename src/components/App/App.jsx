@@ -34,9 +34,9 @@ function App() {
 
   return (
     <Router>
-      <div>
-        <Nav />
-        <SideMenu />
+      <Nav />
+      <SideMenu />
+      <div className={user.id ? "md:pl-[18%]" : ''}>
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />

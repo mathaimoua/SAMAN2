@@ -50,7 +50,7 @@ function SideMenu() {
           <ul className="absolute bottom-0 w-full mb-2">
             <a href="#" className="no-underline hover:no-underline ">
               <li
-                className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500"
+                className="ml-[0] pl-[8%] flex transition ease-in-out duration-200 hover:bg-zinc-500"
                 onClick={() => dispatch({ type: "LOGOUT" })}
               >
                 <LogoutIcon className="w-6 mr-2" />
