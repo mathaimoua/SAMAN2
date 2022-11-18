@@ -20,7 +20,7 @@ function RegisterForm() {
   }; // end registerUser
 
   return (
-    <form className="md:shadow-lg shadow-zinc-300 text-center md:mt-[100px] rounded-md p-4 md:w-[70%] w-screen md:h-[200px] mb-5 h-[280px] ml-auto mr-auto"  onSubmit={registerUser}>
+    <form className="md:shadow-lg shadow-zinc-300 text-center md:mt-[100px] rounded-md p-4 md:w-[70%] bg-white w-screen md:h-[200px] mb-5 h-[280px] ml-auto mr-auto"  onSubmit={registerUser}>
     <h2 className=''>Register</h2>
     {errors.registrationMessage && (
       <h3 className="alert" role="alert">
