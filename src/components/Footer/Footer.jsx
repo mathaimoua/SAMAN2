@@ -12,7 +12,7 @@ function Footer() {
 
   return (
     <div className='w-full'>
-    <div className={user.id ? "md:w-[82%] text-zinc-400 text-center absolute bottom-5 w-full border-zinc-200" : "text-zinc-400 text-center absolute bottom-5 w-full border-zinc-200"} >
+    <div className={user.id ? "md:w-[82%] text-zinc-400 text-center absolute bottom-0 w-full border-zinc-200" : "text-zinc-400 text-center absolute bottom-0 w-full border-zinc-200 bg-white pt-2 h-[40px]"} >
       &copy; SAMAN
     </div>
     </div>

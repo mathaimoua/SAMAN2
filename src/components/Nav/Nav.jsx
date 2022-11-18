@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom'
 import {
@@ -16,9 +16,8 @@ import {
   PhoneIcon,
 } from "@heroicons/react/solid";
 
-import SideMenu from "../SideMenu/SideMenu";
-
 function Nav() {
+  const ref = useRef('');
   const history = useHistory()
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
@@ -26,21 +25,24 @@ function Nav() {
   const handleClick = () => {
     setNav(!nav);
   };
+  const clickRef = () => {
+    console.log(ref.current)
+  }
 
   return (
-    <div className="flex">
+    <div className="flex" onClick={() => {if (nav){setNav(false)} }}>
       {/* NavBar */}
-      <div className="w-screen h-[60px] z-10 bg-slate-400 fixed border-b-[1px] border-zinc-400 md:ml-auto md:mr-auto">
+      <div className="w-screen h-[60px] z-10 bg-white fixed border-b-0 border-zinc-400 md:ml-auto md:mr-auto" onClick={clickRef}>
         <div className="px-2 flex justify-between items-center w-full h-full">
           <div className="flex items-center">
-            <h1 className="text-3xl font-bold mr-4 pl-[8%] md:text-4xl ">SAMAN</h1>
+            <a href={'/'}><h1 className="text-3xl font-bold mr-4 pl-[8%] md:text-4xl ">SAMAN</h1></a>
           </div>
           {!user.id ? (
             <div className="hidden md:flex pr-4">
-              <button className="px-8 py-3 border-none bg-transparent text-black mr-2">
+              <button className="active:bg-transparent px-4 border-none bg-transparent text-black mr-2" onClick={()=>{history.push('/login')} }>
                 Sign In
               </button>
-              <button className="px-8 py-3" onClick={() => history.push('/registration')}>Sign Up</button>
+              <button className="px-8 py-3" onClick={()=>{history.push('/registration')} }>Sign Up</button>
             </div>
           ) : (
             <></>
@@ -89,7 +91,7 @@ function Nav() {
               <button className="bg-white text-black px-8 py-3 mb-4 w-[90%]">
                 Log In
               </button>
-              <button className="bg-white px-8 py-3 w-[90%]">Sign Up</button>
+              <button className="bg-white px-8 py-3 w-[90%]" onClick={() => {history.push('/registration')}}>Sign Up</button>
             </div>
           )}
         </ul>

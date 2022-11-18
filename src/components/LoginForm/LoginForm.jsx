@@ -25,7 +25,7 @@ function LoginForm() {
   }; // end login
 
   return (
-    <form className="shadow-lg shadow-zinc-300 text-center md:mt-[100px] mt-[20px] rounded-md p-4 m-2 md:w-[70%] md:h-[200px] w-[80%] ml-auto mr-auto" onSubmit={login}>
+    <form className="md:shadow-lg shadow-zinc-300 text-center md:mt-[100px] mt-[10%] rounded-md p-4 md:w-[70%] w-screen md:h-[200px] mb-5 h-[280px] ml-auto mr-auto" onSubmit={login}>
       <h2 className=''>Login</h2>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
