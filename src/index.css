@@ -7,7 +7,7 @@
     @apply p-4
   }
   button {
-    @apply text-black border bg-[#FA8072] border-[#FA8072] hover:bg-transparent hover:text-black rounded-md
+    @apply text-black border bg-[#FA8072] border-[#FA8072] hover:bg-[#c26257] rounded-md active:bg-zinc-500
   }
   body {
     overscroll-behavior: none;

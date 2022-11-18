@@ -13,7 +13,10 @@ import {
   ArchiveIcon,
   QuestionMarkCircleIcon,
   PencilIcon,
+  PhoneIcon,
 } from "@heroicons/react/solid";
+
+import SideMenu from "../SideMenu/SideMenu";
 
 function Nav() {
   const dispatch = useDispatch();
@@ -25,58 +28,15 @@ function Nav() {
 
   return (
     <div className="flex">
-      {/* SideMenu */}
-      {user.id && (
-        <div
-          className={
-            "h-full w-[18%] text-black pt-[60px] absolute bg-zinc-300 hidden md:block max-w-relative min-w-[150px]"
-          }
-        >
-          <ul>
-            <li className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500">
-              <HomeIcon className="w-6 mr-2" />
-              <p className="mt-2">Home</p>
-            </li>
-            <li className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500">
-              <LocationMarkerIcon className="w-6 mr-2" />
-              <p className="mt-2">Locations</p>
-            </li>
-            <li className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500">
-              <ArchiveIcon className="w-6 mr-2" />
-              <p className="mt-2">Containers</p>
-            </li>
-            <li className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500">
-              <PencilIcon className="w-6 mr-2" />
-              <p className="mt-2">Items</p>
-            </li>
-            <li className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500">
-              <QuestionMarkCircleIcon className="w-6 mr-2" />
-              <p className="mt-2">About</p>
-            </li>
-          </ul>
-          {/* Logout at bottom of Side Menu */}
-          <ul className="absolute bottom-0 w-full mb-2">
-            <a href="#" class="no-underline hover:no-underline ">
-              <li
-                className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500"
-                onClick={() => dispatch({ type: "LOGOUT" })}
-              >
-                <LogoutIcon className="w-6 mr-2" />
-                <p className="mt-2">Logout</p>
-              </li>
-            </a>
-          </ul>
-        </div>
-      )}
       {/* NavBar */}
-      <div className="w-screen h-[60px] z-10 bg-slate-400 fixed border-b-3 border-zinc-600 md:ml-auto md:mr-auto">
+      <div className="w-screen h-[60px] z-10 bg-slate-400 fixed border-b-[1px] border-zinc-400 md:ml-auto md:mr-auto">
         <div className="px-2 flex justify-between items-center w-full h-full">
           <div className="flex items-center">
             <h1 className="text-3xl font-bold mr-4 pl-[8%] md:text-4xl ">SAMAN</h1>
           </div>
           {!user.id ? (
             <div className="hidden md:flex pr-4">
-              <button className="border-none bg-transparent text-black mr-4">
+              <button className="px-8 py-3 border-none bg-transparent text-black mr-2">
                 Sign In
               </button>
               <button className="px-8 py-3">Sign Up</button>
@@ -90,36 +50,45 @@ function Nav() {
         </div>
         {/* Mobile NavMenu */}
         <ul className={!nav ? "hidden" : "absolute bg-zinc-300  w-full"}>
+          {user.id ?
           <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
             <HomeIcon className="w-6 mr-2" />
             <p className='mt-1 text-lg'>Home</p>
-          </li>
+          </li> : <></> }
+          {user.id ?
           <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
             <LocationMarkerIcon className="w-6 mr-2" />
             <p className='mt-1 text-lg'>Locations</p>
-          </li>
+          </li> : <></> }
+          {user.id ?
           <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
             <ArchiveIcon className="w-6 mr-2" />
             <p className='mt-1 text-lg'>Containers</p>
-          </li>
+          </li> : <></>}
+          {user.id ?
           <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
             <PencilIcon className="w-6 mr-2" />
             <p className='mt-1 text-lg'>Items</p>
-          </li>
+          </li> : <></> }
           <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
             <QuestionMarkCircleIcon className="w-6 mr-2" />
             <p className='mt-1 text-lg'>About</p>
           </li>
+          <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
+            <PhoneIcon className="w-6 mr-2" />
+            <p className='mt-1 text-lg'>Contact</p>
+          </li>
+          {user.id ?
           <li className="w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
             <LogoutIcon className="w-6 mr-2" />
             <p className='mt-1 text-lg'>Logout</p>
-          </li>
+          </li> : <></> }
           {!user.id && (
-            <div className="flex flex-col my-4">
-              <button className="bg-transparent text-orange-300 px-8 py-3 mb-4">
-                Sign In
+            <div className="text-center my-4 justify-items-center">
+              <button className="bg-white text-black px-8 py-3 mb-4 w-[90%]">
+                Log In
               </button>
-              <button className="px-8 py-3">Sign Up</button>
+              <button className="bg-white px-8 py-3 w-[90%]">Sign Up</button>
             </div>
           )}
         </ul>

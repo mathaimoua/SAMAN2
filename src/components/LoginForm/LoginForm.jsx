@@ -15,7 +15,7 @@ function LoginForm() {
       dispatch({
         type: 'LOGIN',
         payload: {
-          username: username,
+          username: username.toLowerCase(),
           password: password,
         },
       });
@@ -25,8 +25,8 @@ function LoginForm() {
   }; // end login
 
   return (
-    <form className="text-center md:mt-[100px] mt-[20px] rounded-md p-2 m-2 md:w-[40%] w-[80%] ml-auto mr-auto" onSubmit={login}>
-      <h2>Login</h2>
+    <form className="shadow-lg shadow-zinc-300 text-center md:mt-[100px] mt-[20px] rounded-md p-4 m-2 md:w-[70%] md:h-[200px] w-[80%] ml-auto mr-auto" onSubmit={login}>
+      <h2 className=''>Login</h2>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
           {errors.loginMessage}
