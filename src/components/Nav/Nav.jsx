@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from 'react-router-dom'
 import {
   MenuIcon,
   XIcon,
@@ -19,6 +19,7 @@ import {
 import SideMenu from "../SideMenu/SideMenu";
 
 function Nav() {
+  const history = useHistory()
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const [nav, setNav] = useState(false);
@@ -39,7 +40,7 @@ function Nav() {
               <button className="px-8 py-3 border-none bg-transparent text-black mr-2">
                 Sign In
               </button>
-              <button className="px-8 py-3">Sign Up</button>
+              <button className="px-8 py-3" onClick={() => history.push('/registration')}>Sign Up</button>
             </div>
           ) : (
             <></>
