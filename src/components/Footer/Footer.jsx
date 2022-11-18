@@ -7,8 +7,8 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className='text-center'>
-    <div className="text-right ml-[1%] pr-[1%] md:ml-[19%] mr-[1%] bottom-1 mt-5 border-t-2 border-zinc-200">
+    <div className='w-full flex items-center'>
+    <div className="text-right text-zinc-400 absolute bottom-5 w-[95%] md:w-[50%] border-t-2 border-zinc-200">
       &copy; SAMAN
     </div>
     </div>
