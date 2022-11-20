@@ -55,7 +55,7 @@ function RegisterForm() {
       </label>
     </div>
     <div>
-      <button className='py-2 px-5 my-2'>Log In</button>
+      <button className='py-2 px-5 my-2 transition duration:400 hover:bg-[#dd7266]'>Submit</button>
     </div>
   </form>
   );
