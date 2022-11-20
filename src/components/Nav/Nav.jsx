@@ -42,7 +42,7 @@ function Nav() {
               <button className="active:bg-transparent px-4 border-none bg-transparent text-black mr-2" onClick={()=>{history.push('/login')} }>
                 Sign In
               </button>
-              <button className="px-8 py-3" onClick={()=>{history.push('/registration')} }>Sign Up</button>
+              <button className="px-8 py-3 transition duration:400 hover:bg-[#dd7266]" onClick={()=>{history.push('/registration')} }>Sign Up</button>
             </div>
           ) : (
             <></>
