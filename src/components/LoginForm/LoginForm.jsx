@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
+import { useHistory } from 'react-router-dom'
 
 function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const errors = useSelector(store => store.errors);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const login = (event) => {
     event.preventDefault();
@@ -25,7 +27,7 @@ function LoginForm() {
   }; // end login
 
   return (
-    <form className="md:shadow-lg shadow-zinc-300 text-center md:mt-[100px] mt-[10%] rounded-md p-4 md:w-[70%] w-screen md:h-[200px] mb-5 h-[280px] ml-auto mr-auto" onSubmit={login}>
+    <form className="md:shadow-lg shadow-zinc-300 text-center md:mt-[30%] mt-[10%] rounded-md p-4 md:w-[70%] w-screen mb-5 ml-auto mr-auto" onSubmit={login}>
       <h2 className=''>Login</h2>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
@@ -36,7 +38,7 @@ function LoginForm() {
         <label htmlFor="username">
           <input
             placeholder='Username'
-            className='mb-2 ml-2 p-1 rounded-md border-2 border-zinc-200'
+            className='w-[100%] mb-2 ml-2 p-1 rounded-md border-2 border-zinc-200'
             type="text"
             name="username"
             required
@@ -50,7 +52,7 @@ function LoginForm() {
         <label htmlFor="password">
           <input
             placeholder='Password'
-            className='ml-2 p-1 rounded-md border-2 border-zinc-200'
+            className='w-[100%] ml-2 p-1 rounded-md border-2 border-zinc-200'
             type="password"
             name="password"
             required
@@ -62,6 +64,7 @@ function LoginForm() {
       <div>
         <button className='py-2 px-5 my-2'>Log In</button>
       </div>
+      <p onClick={() => {history.push('/registration')}} className='hover:underline text-[#FA8072] hover:cursor-pointer hover:text-zinc-300'>Don't have an account? Sign up!</p>
     </form>
   );
 }

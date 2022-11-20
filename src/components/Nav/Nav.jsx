@@ -35,7 +35,7 @@ function Nav() {
       <div className="w-screen h-[60px] z-10 bg-white fixed border-b-0 border-zinc-400 md:ml-auto md:mr-auto" onClick={clickRef}>
         <div className="px-2 flex justify-between items-center w-full h-full">
           <div className="flex items-center">
-            <a href={'/'}><h1 className="text-3xl font-bold mr-4 pl-[8%] md:text-4xl ">SAMAN</h1></a>
+            <a href={'/'}><h1 className="text-3xl font-bold mr-4 pl-[8%] md:text-4xl transition duration:500 hover:scale-110">SAMAN</h1></a>
           </div>
           {!user.id ? (
             <div className="hidden md:flex pr-4">
