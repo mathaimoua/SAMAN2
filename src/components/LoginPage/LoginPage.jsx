@@ -8,7 +8,7 @@ function LoginPage() {
 
   return (
     <div className=''>
-      <div className='md:w-[50%] w-:full m-0 mx-auto'>
+      <div className='ml-auto mr-auto md:w-[50%] md:mt-[15%] mt-[10%]'>
       <LoginForm />
       </div>
       <Footer />

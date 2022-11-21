@@ -25,7 +25,7 @@ function LandingPage() {
           NOT cost an arm and a leg, in fact, it's free!
         </div>
       </div>
-      <div className="md:w-[50%]">
+      <div className="md:w-[50%] md:mt-[15%] mt-[10%] ">
         <LoginForm />
       </div>
     </div>
