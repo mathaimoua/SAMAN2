@@ -28,7 +28,7 @@ function RegisterForm() {
       >
         {errors.registrationMessage && (
           <h3 className="alert" role="alert">
-            {errors.registrationMessage}
+            <p className='text-red-500'>{errors.registrationMessage}</p>
           </h3>
         )}
         <div className="w-full flex justify-center">

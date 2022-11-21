@@ -36,7 +36,7 @@ function LoginForm() {
         {/* <h2 className=''>Login</h2> */}
         {errors.loginMessage && (
           <h3 className="alert" role="alert">
-            {errors.loginMessage}
+            <p className='text-red-500'>{errors.loginMessage}</p>
           </h3>
         )}
         <div className="w-full flex justify-center">
