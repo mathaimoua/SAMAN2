@@ -80,76 +80,81 @@ function Nav() {
         {/* Mobile NavMenu */}
       </div>
       <div className="md:hidden fixed z-40 w-full h-0 pt-[15%]">
-          <ul
-            className={`bg-zinc-300 w-full border-b-2 border-zinc-200 shadow-md ease-in-out duration-300 ${
-              nav ? "translate-y-0" : "-translate-y-96"
-            }`}
-          >
-            {user.id ? (
-              <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
-                <HomeIcon className="w-6 mr-2" />
-                <p className="mt-1 text-lg">Home</p>
-              </li>
-            ) : (
-              <></>
-            )}
-            {user.id ? (
-              <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
-                <LocationMarkerIcon className="w-6 mr-2" />
-                <p className="mt-1 text-lg">Locations</p>
-              </li>
-            ) : (
-              <></>
-            )}
-            {user.id ? (
-              <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
-                <ArchiveIcon className="w-6 mr-2" />
-                <p className="mt-1 text-lg">Containers</p>
-              </li>
-            ) : (
-              <></>
-            )}
-            {user.id ? (
-              <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
-                <PencilIcon className="w-6 mr-2" />
-                <p className="mt-1 text-lg">Items</p>
-              </li>
-            ) : (
-              <></>
-            )}
+        <ul
+          className={`bg-zinc-300 w-full border-b-2 border-zinc-200 shadow-md ease-in-out duration-300 ${
+            nav ? "translate-y-0" : "-translate-y-96"
+          }`}
+        >
+          {user.id ? (
             <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
-              <QuestionMarkCircleIcon className="w-6 mr-2" />
-              <p className="mt-1 text-lg">About</p>
+              <HomeIcon className="w-6 mr-2" />
+              <p className="mt-1 text-lg">Home</p>
             </li>
+          ) : (
+            <></>
+          )}
+          {user.id ? (
             <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
-              <PhoneIcon className="w-6 mr-2" />
-              <p className="mt-1 text-lg">Contact</p>
+              <LocationMarkerIcon className="w-6 mr-2" />
+              <p className="mt-1 text-lg">Locations</p>
             </li>
-            {user.id ? (
-              <li className="w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
-                <LogoutIcon className="w-6 mr-2" />
-                <p className="mt-1 text-lg">Logout</p>
-              </li>
-            ) : (
-              <></>
-            )}
-            {!user.id && (
-              <div className="text-center my-4 justify-items-center mb-6">
-                <button className="bg-white text-black px-8 py-3 mb-4 w-[90%] transition duration:400 hover:bg-[#dd7266]">
-                  Log In
-                </button>
-                <button
-                  className="px-8 py-3 w-[90%] transition duration:400 hover:bg-[#dd7266]"
-                  onClick={() => {
-                    history.push("/registration");
-                  }}
-                >
-                  Sign Up
-                </button>
-              </div>
-            )}
-          </ul>
-        </div>
+          ) : (
+            <></>
+          )}
+          {user.id ? (
+            <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
+              <ArchiveIcon className="w-6 mr-2" />
+              <p className="mt-1 text-lg">Containers</p>
+            </li>
+          ) : (
+            <></>
+          )}
+          {user.id ? (
+            <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
+              <PencilIcon className="w-6 mr-2" />
+              <p className="mt-1 text-lg">Items</p>
+            </li>
+          ) : (
+            <></>
+          )}
+          <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
+            <QuestionMarkCircleIcon className="w-6 mr-2" />
+            <p className="mt-1 text-lg">About</p>
+          </li>
+          <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
+            <PhoneIcon className="w-6 mr-2" />
+            <p className="mt-1 text-lg">Contact</p>
+          </li>
+          {user.id ? (
+            <li className="w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
+              <LogoutIcon className="w-6 mr-2" />
+              <p className="mt-1 text-lg">Logout</p>
+            </li>
+          ) : (
+            <></>
+          )}
+          {!user.id && (
+            <div className="text-center my-4 justify-items-center mb-6">
+              <button
+                className="bg-white text-black px-8 py-3 mb-4 w-[90%] transition duration:400 hover:bg-[#dd7266]"
+                onClick={() => {
+                  history.push("/login");
+                }}
+              >
+                Log In
+              </button>
+              <button
+                className="px-8 py-3 w-[90%] transition duration:400 hover:bg-[#dd7266]"
+                onClick={() => {
+                  history.push("/registration");
+                }}
+              >
+                Sign Up
+              </button>
+            </div>
+          )}
+        </ul>
+      </div>
     </div>
   );
 }

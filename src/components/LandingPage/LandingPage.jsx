@@ -17,7 +17,7 @@ function LandingPage() {
 
   return (
     <div className="md:flex">
-      <div className="flex-column md:h-screen h-[50%] md:w-[50%] bg-zinc-300 text-black md:pt-[70px]">
+      <div className="flex-column pt-[10px] md:h-screen h-[50%] md:w-[50%] bg-zinc-300 text-black md:pt-[70px]">
         <div className="px-[10%] top-0 pb-[10%] text-2xl font-thin z-10">
         <img
             src={samanPic}
