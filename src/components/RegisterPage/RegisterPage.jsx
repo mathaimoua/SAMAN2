@@ -15,7 +15,7 @@ function RegisterPage() {
             {/* <img src={organizePic} className='visible'/> */}
           </div>
         </div>
-        <div className="md:w-[50%] md:h-screen md:pt-[15%] pt-[10%]">
+        <div className="md:w-[50%] md:h-screen md:pt-[20%] pt-[10%]">
             <RegisterForm />
         </div>
       </div>

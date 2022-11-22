@@ -30,13 +30,13 @@ function LoginForm() {
     <div>
        <h2 className='text-center mb-1 text-xl font-thin'>Login</h2>
       <form
-        className="md:shadow-lg text-center shadow-zinc-300 rounded-md p-4 md:w-[70%] w-screen mb-5 ml-auto mr-auto"
+        className="md:shadow-lg text-center shadow-zinc-300 rounded-md p-4 md:w-[70%] w-screen mb-5 ml-auto mr-auto bg-white"
         onSubmit={login}
       >
         {/* <h2 className=''>Login</h2> */}
         {errors.loginMessage && (
           <h3 className="alert" role="alert">
-            <p className='text-red-500'>{errors.loginMessage}</p>
+            <p className='text-xs text-red-500 mb-3'>*{errors.loginMessage}</p>
           </h3>
         )}
         <div className="w-full flex justify-center">

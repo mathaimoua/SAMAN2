@@ -23,12 +23,12 @@ function RegisterForm() {
     <div>
       <h2 className="text-center mb-1 text-xl font-thin">Register</h2>
       <form
-        className="md:shadow-lg text-center shadow-zinc-300 rounded-md p-4 md:w-[70%] w-screen mb-5 ml-auto mr-auto"
+        className="md:shadow-lg text-center shadow-zinc-300 rounded-md p-4 md:w-[70%] w-screen mb-5 ml-auto mr-auto bg-white"
         onSubmit={registerUser}
       >
         {errors.registrationMessage && (
           <h3 className="alert" role="alert">
-            <p className='text-red-500'>{errors.registrationMessage}</p>
+            <p className='text-red-500 text-xs mb-3'>*{errors.registrationMessage}</p>
           </h3>
         )}
         <div className="w-full flex justify-center">
