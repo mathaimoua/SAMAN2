@@ -27,7 +27,7 @@ function LandingPage() {
           easy organizing of your belongings. SAMAN makes it easy for any
           organization or individual to get organized and help reduce
           unnecessary losses. Unlike other asset management software, SAMAN does
-          NOT cost an arm and a leg, in fact, it's free!</p>
+          NOT cost an arm and a leg, in fact, <span className='font-bold italic'>it's free!</span></p>
         </div>
       </div>
       <div className="md:w-[50%] md:pt-[20%] pt-[10px] ">
