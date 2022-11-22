@@ -1,0 +1,37 @@
+const express = require('express');
+const pool = require('../modules/pool');
+const router = express.Router();
+const {
+  rejectUnauthenticated,
+} = require('../modules/authentication-middleware');
+
+/**
+ * GET route template
+ */
+ router.get('/recentItems', rejectUnauthenticated, (req, res) => {
+  const queryText = `
+  SELECT * FROM "items"
+  JOIN "user" ON "items".user_id = "user".id
+  JOIN "containers" ON "items".container_id = "containers".container_id
+  JOIN "locations" ON "containers".location_id = "locations".location_id
+  WHERE "user".id = $1 AND "isActive" = TRUE
+  ORDER BY "date_added" DESC LIMIT 5;`;
+
+  pool.query(queryText, [req.user.id])
+    .then(response => {
+      // console.log('data from server is', response.rows)
+      res.send(response.rows)
+    }).catch(err => {
+      // console.log(err)
+      // res.sendStatus(500)
+    })
+});
+
+/**
+ * POST route template
+ */
+router.post('/', (req, res) => {
+  // POST route code here
+});
+
+module.exports = router;

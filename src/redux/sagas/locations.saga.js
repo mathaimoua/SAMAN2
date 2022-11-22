@@ -7,7 +7,7 @@ function* fetchMainLocation() {
     const response = yield axios.get('/api/locations/main');
     yield console.log('response is', response.data[0])
     if ( response.data[0] === undefined ){
-      yield put({ type: 'SET_MAIN_LOCATION', payload: {location_id: '0', location_name: 'NA'} })
+      yield put({ type: 'SET_MAIN_LOCATION', payload: {location_id: '0', location_name: 'No Main Location'} })
     } else {
       yield put({ type: 'SET_MAIN_LOCATION', payload: response.data[0] });
     }
