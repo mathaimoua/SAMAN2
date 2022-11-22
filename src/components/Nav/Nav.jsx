@@ -79,7 +79,7 @@ function Nav() {
         </div>
         {/* Mobile NavMenu */}
       </div>
-      <div className="fixed z-40 w-full h-0 pt-[15%]">
+      <div className="md:hidden fixed z-40 w-full h-0 pt-[15%]">
           <ul
             className={`bg-zinc-300 w-full border-b-2 border-zinc-200 shadow-md ease-in-out duration-300 ${
               nav ? "translate-y-0" : "-translate-y-96"
