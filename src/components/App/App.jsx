@@ -110,7 +110,9 @@ function App() {
         </Switch>
         {/* <Footer /> */}
       </div>
+      <div className={user.id ? "md:pl-[18%]" : ""}>
       <Footer />
+      </div>
     </Router>
   );
 }
