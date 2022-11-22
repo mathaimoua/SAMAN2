@@ -9,13 +9,13 @@ function RegisterPage() {
   return (
     <div>
       <div className="md:flex">
-        <div className="pt-[33%] md:h-[90%] h-[50%] md:w-[50%] text-black md:pt-[70px]">
-          <div className="md:text-4xl md:text-center md:pt-[30%] px-[10%] pt-[20%] pb-[10%] text-2xl font-thin text-center">
+        <div className="pt-[30%] md:h-[90%] h-[50%] md:w-[50%] text-black md:pt-[70px]">
+          <div className="md:text-4xl md:text-center md:pt-[30%] px-[10%] pt-[0] pb-[0] text-2xl font-thin text-center">
             You're one step away from organization!
             {/* <img src={organizePic} className='visible'/> */}
           </div>
         </div>
-        <div className="md:w-[50%] md:h-screen md:pt-[20%] pt-[10%]">
+        <div className="md:w-[50%] md:h-screen md:pt-[20%] pt-[5%]">
             <RegisterForm />
         </div>
       </div>

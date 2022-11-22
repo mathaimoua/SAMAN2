@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from 'react-router-dom'
 
 function RegisterForm() {
+  const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const errors = useSelector((store) => store.errors);
@@ -22,7 +24,7 @@ function RegisterForm() {
   return (
     <div>
       <form
-        className="md:shadow-lg text-center shadow-zinc-300 rounded-md p-4 md:w-[70%] w-screen mb-5 ml-auto mr-auto bg-white"
+        className="md:shadow-lg text-center shadow-zinc-300 rounded-md p-4 md:w-[70%] w-screen pb-5 ml-auto mr-auto bg-white"
         onSubmit={registerUser}
       >
         {errors.registrationMessage && (
@@ -35,7 +37,7 @@ function RegisterForm() {
           <h2 className='text-center m-2 text-xl font-thin'>Register</h2>
             <input
               placeholder="Username"
-              className="w-[100%] mb-2 ml-2 p-1 rounded-md border-2 border-zinc-200"
+              className="w-[100%] mb-2 ml-2 p-2 rounded-md border-2 border-zinc-200"
               type="text"
               name="username"
               required
@@ -49,7 +51,7 @@ function RegisterForm() {
           <label htmlFor="password">
             <input
               placeholder="Password"
-              className="w-[100%] mb-2 ml-2 p-1 rounded-md border-2 border-zinc-200"
+              className="w-[100%] ml-2 p-2 rounded-md border-2 border-zinc-200"
               type="password"
               name="password"
               required
@@ -60,9 +62,9 @@ function RegisterForm() {
         </div>
         <p
           onClick={() => {
-            history.push("/registration");
+            history.push("/login");
           }}
-          className="hover:underline text-[#FA8072] hover:cursor-pointer hover:text-zinc-300 mt-3 mb-3"
+          className="hover:underline text-[#FA8072] hover:cursor-pointer hover:text-zinc-300 pt-3 pb-3"
         >
           Already a member? Sign in!
         </p>
