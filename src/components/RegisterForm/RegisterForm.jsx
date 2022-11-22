@@ -21,7 +21,6 @@ function RegisterForm() {
 
   return (
     <div>
-      <h2 className="text-center mb-1 text-xl font-thin">Register</h2>
       <form
         className="md:shadow-lg text-center shadow-zinc-300 rounded-md p-4 md:w-[70%] w-screen mb-5 ml-auto mr-auto bg-white"
         onSubmit={registerUser}
@@ -33,6 +32,7 @@ function RegisterForm() {
         )}
         <div className="w-full flex justify-center">
           <label htmlFor="username">
+          <h2 className='text-center m-2 text-xl font-thin'>Register</h2>
             <input
               placeholder="Username"
               className="w-[100%] mb-2 ml-2 p-1 rounded-md border-2 border-zinc-200"

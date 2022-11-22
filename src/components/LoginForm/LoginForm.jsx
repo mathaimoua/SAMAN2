@@ -28,22 +28,23 @@ function LoginForm() {
 
   return (
     <div>
-       <h2 className='text-center mb-1 text-xl font-thin'>Login</h2>
       <form
-        className="md:shadow-lg text-center shadow-zinc-300 rounded-md p-4 md:w-[70%] w-screen mb-5 ml-auto mr-auto bg-white"
+        className="md:shadow-lg text-center shadow-zinc-300 rounded-md p-4 md:w-[70%] w-screen pb-5 ml-auto mr-auto bg-white"
         onSubmit={login}
       >
         {/* <h2 className=''>Login</h2> */}
         {errors.loginMessage && (
           <h3 className="alert" role="alert">
-            <p className='text-xs text-red-500 mb-3'>*{errors.loginMessage}</p>
+            <p className='text-xs text-red-500 pb-3'>*{errors.loginMessage}</p>
           </h3>
         )}
         <div className="w-full flex justify-center">
+         
           <label htmlFor="username">
+          <h2 className='text-center m-2 text-xl font-thin'>Login</h2>
             <input
               placeholder="Username"
-              className="w-[100%] mb-2 ml-2 p-1 rounded-md border-2 border-zinc-200"
+              className="w-[100%] mb-2 ml-2 p-2 rounded-md border-2 border-zinc-200"
               type="text"
               name="username"
               required
@@ -57,7 +58,7 @@ function LoginForm() {
           <label htmlFor="password">
             <input
               placeholder="Password"
-              className="w-[100%] ml-2 p-1 rounded-md border-2 border-zinc-200"
+              className="w-[100%] ml-2 p-2 rounded-md border-2 border-zinc-200"
               type="password"
               name="password"
               required
@@ -70,7 +71,7 @@ function LoginForm() {
           onClick={() => {
             history.push("/registration");
           }}
-          className="hover:underline text-[#FA8072] hover:cursor-pointer hover:text-zinc-300 mt-3 mb-3"
+          className="hover:underline text-[#FA8072] hover:cursor-pointer hover:text-zinc-300 pt-3 pb-3"
         >
           Don't have an account? Sign up!
         </p>

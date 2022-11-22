@@ -9,10 +9,10 @@ function LoginPage() {
 
   return (
     <div className=''>
-      <div className='relative z-0 h-0 top-[40] w-[70%] ml-auto mr-auto md:pt-0 pt-20 pb-20'>
+      <div className='relative z-0 h-0 md:top-[20px] w-[70%] ml-auto mr-auto md:pt-0 pt-20 md:pb-20'>
         <img src={samanPic} />
       </div>
-      <div className='relative z-10 ml-auto mr-auto md:w-[50%] md:mt-[20%] mt-[10%]'>
+      <div className='relative z-10 ml-auto mr-auto md:w-[50%] md:mt-[20%] mt-[30%]'>
       <LoginForm />
       </div>
       <Footer />
