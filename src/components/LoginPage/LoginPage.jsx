@@ -15,7 +15,6 @@ function LoginPage() {
       <div className='relative z-10 ml-auto mr-auto md:w-[50%] md:mt-[20%] mt-[30%]'>
       <LoginForm />
       </div>
-      <Footer />
     </div>
   );
 }

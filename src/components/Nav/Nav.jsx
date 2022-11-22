@@ -30,7 +30,7 @@ function Nav() {
   }
 
   return (
-    <div className="flex" onClick={() => {if (nav){setNav(false)} }}>
+    <div className="flex relative z-50" onClick={() => {if (nav){setNav(false)} }}>
       {/* NavBar */}
       <div className="w-screen h-[60px] z-10 bg-white fixed border-b-0 border-zinc-400 md:ml-auto md:mr-auto" onClick={clickRef}>
         <div className="px-2 flex justify-between items-center w-full h-full">
@@ -52,7 +52,7 @@ function Nav() {
           </div>
         </div>
         {/* Mobile NavMenu */}
-        <ul className={!nav ? "hidden" : "absolute bg-zinc-300  w-full"}>
+        <ul className={!nav ? "hidden" : "absolute bg-zinc-300 w-full"}>
           {user.id ?
           <li className="border-b-2 border-zinc-200 w-full flex justify-center transition ease-in-out duration-200 active:bg-zinc-500">
             <HomeIcon className="w-6 mr-2" />
