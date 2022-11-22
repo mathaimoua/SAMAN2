@@ -2,13 +2,13 @@ import React, { useMemo, useEffect } from "react";
 import LogOutButton from "../LogOutButton/LogOutButton";
 import { useSelector, useDispatch } from "react-redux";
 import MaterialReactTable from "material-react-table";
-import { useHistory } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
 function UserPage() {
   const dispatch = useDispatch();
   const history = useHistory();
   const mainLocation = useSelector((store) => store.locations.main);
-  const recentItems = useSelector((store) => store.items.recentItems)
+  const recentItems = useSelector((store) => store.items.recentItems);
   const user = useSelector((store) => store.user);
   const tableData = [];
   const tableColumns = useMemo(
@@ -41,7 +41,7 @@ function UserPage() {
 
   return (
     <div>
-      <div className="pl-5 mt-[20%] md:mt-[6%] md:pt-4 md:pb-4 md:text-left text-center text-zinc-600 bg-zinc-100">
+      <div className="pl-5 mt-[60px] md:pt-4 md:pb-4 md:text-left text-center text-zinc-600 bg-zinc-100">
         <h2>
           Welcome,{" "}
           {String(user.username).charAt(0).toUpperCase() +
@@ -63,7 +63,8 @@ function UserPage() {
           id: item.item_id,
         });
       })}
-            <MaterialReactTable
+      <div className='pt-5 md:pt-10 md:w-[97%] md:ml-auto md:mr-auto'>
+      <MaterialReactTable
         columns={tableColumns}
         data={tableData}
         enableFullScreenToggle={false}
@@ -75,10 +76,16 @@ function UserPage() {
         enablePagination={false}
         enableBottomToolbar={false}
         renderTopToolbarCustomActions={() => (
-          <div className='w-full grid  grid-cols-2 md:grid-cols-3 content-center'>
-            <div className='hidden md:block'></div>
-            <h3 className="pt-2 text-center" >Recently added items</h3>
-            <button type="submit" className='p-2 bg-[#FA8072] w-[130px] ml-auto mr-auto' onClick={() => history.push(`/additem/${mainLocation.location_id}`)} >
+          <div className="w-full grid  grid-cols-2 md:grid-cols-3 content-center">
+            <div className="hidden md:block"></div>
+            <h3 className="pt-2 text-center">Recently added items</h3>
+            <button
+              type="submit"
+              className="p-2 bg-[#FA8072] w-[130px] ml-auto mr-auto"
+              onClick={() =>
+                history.push(`/additem/${mainLocation.location_id}`)
+              }
+            >
               Add New Item
             </button>
           </div>
@@ -105,6 +112,7 @@ function UserPage() {
           },
         }}
       />
+      </div>
     </div>
   );
 }
