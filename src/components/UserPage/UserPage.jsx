@@ -22,10 +22,6 @@ function UserPage() {
         header: "Container",
       },
       {
-        accessorKey: "location_name", //normal accessorKey
-        header: "Location",
-      },
-      {
         accessorKey: "id", //normal accessorKey
         header: "ID",
       },
@@ -41,7 +37,8 @@ function UserPage() {
 
   return (
     <div>
-      <div className="pl-5 mt-[60px] md:pt-4 md:pb-4 md:text-left text-center text-zinc-600 bg-zinc-100">
+      <div className="pl-5 mt-[60px] flex md:pt-2 md:pb-2 md:text-left text-center bg-[#74BDCB]">
+        {/* bg-zinc-100 */}
         <h2>
           Welcome,{" "}
           {String(user.username).charAt(0).toUpperCase() +
@@ -49,11 +46,31 @@ function UserPage() {
           !
           <h3>
             You are currently managing{" "}
-            <span className="font-bold italic">
+            <span className="font-bold italic text-zinc-100">
               {mainLocation.location_name}
             </span>
           </h3>
         </h2>
+        <button
+              type="submit"
+              className="md:block hidden md:p-2 bg-[#FA8072] md:w-[130px] w-[100px] ml-auto mr-5 md:float-right"
+              onClick={() =>
+                history.push(`/additem/${mainLocation.location_id}`)
+              }
+            >
+              Add New Item
+            </button>
+      </div>
+      <div className='w-full flex md:flex-row md:p-5 flex-column md:justify-between border-b md:h-[200px] border-zinc-100'>
+              <div>
+                Total Assets
+              </div>
+              <div>
+                Losses
+              </div>
+              <div>
+                Total Assets
+              </div>
       </div>
       {recentItems.map((item) => {
         tableData.push({
@@ -76,12 +93,12 @@ function UserPage() {
         enablePagination={false}
         enableBottomToolbar={false}
         renderTopToolbarCustomActions={() => (
-          <div className="w-full grid  grid-cols-2 md:grid-cols-3 content-center">
+          <div className="w-full grid grid-cols-2 md:grid-cols-3 content-center">
             <div className="hidden md:block"></div>
             <h3 className="pt-2 text-center">Recently added items</h3>
             <button
               type="submit"
-              className="p-2 bg-[#FA8072] w-[130px] ml-auto mr-auto"
+              className="md:hidden p-2 bg-[#FA8072] w-[130px] ml-auto mr-5 md:float-right"
               onClick={() =>
                 history.push(`/additem/${mainLocation.location_id}`)
               }
