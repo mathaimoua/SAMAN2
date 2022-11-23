@@ -24,8 +24,16 @@ function* fetchUser() {
   }
 }
 
+// This function loads on user login, grabs basic information and stores into store.
+function* fetchUserInfo(){
+  yield put({type: 'FETCH_MAIN_LOCATION'})
+  yield put({type: "FETCH_RECENT_ITEMS" })
+  yield put({type: 'FETCH_NUM_ASSETS' })
+}
+
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
+  yield fetchUserInfo('FETCH_USER_INFO', fetchUserInfo)
 }
 
 export default userSaga;

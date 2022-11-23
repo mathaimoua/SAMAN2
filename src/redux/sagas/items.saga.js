@@ -8,12 +8,23 @@ function* fetchRecentItems() {
     // yield console.log('payload is', response.data)
     yield put({ type: 'SET_RECENT_ITEMS', payload: response.data });
   } catch (error) {
-    // console.log('User get request failed', error);
+    console.log('Error fetching recent items.', error);
+  }
+}
+
+function* fetchNumAssets(){
+  try{
+    const response = yield axios.get('/api/items/numAssets')
+    // yield console.log('num assets is', response.data)
+    yield put({type: 'SET_NUM_ASSETS', payload: response.data})
+  } catch (error) {
+    console.log('Error fetching total number of assets.', error)
   }
 }
 
 function* itemsSaga() {
   yield takeLatest('FETCH_RECENT_ITEMS', fetchRecentItems);
+  yield takeLatest('FETCH_NUM_ASSETS', fetchNumAssets);
 }
 
 export default itemsSaga;

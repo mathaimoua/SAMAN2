@@ -17,7 +17,7 @@ const router = express.Router();
 
   pool.query(queryText, [req.user.id])
     .then(response => {
-      console.log('data from server is', response.rows)
+      // console.log('data from server is', response.rows)
       res.send(response.rows)
     }).catch(err => {
       console.log(err)
