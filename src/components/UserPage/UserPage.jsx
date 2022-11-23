@@ -9,6 +9,7 @@ function UserPage() {
   const mainLocation = useSelector((store) => store.locations.main);
   const recentItems = useSelector((store) => store.items.recentItems);
   const numAssets = useSelector((store) => store.items.numAssets);
+  // const [numAssets, setNumAssets] = useState(null)
   const user = useSelector((store) => store.user);
   const tableData = [];
   const tableColumns = useMemo(
@@ -31,9 +32,7 @@ function UserPage() {
 
 
   useEffect(() => {
-    // dispatch({ type: "FETCH_MAIN_LOCATION" });
     dispatch({type: 'FETCH_USER_INFO'})
-    // dispatch({ type: "FETCH_RECENT_ITEMS" });
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
@@ -62,12 +61,12 @@ function UserPage() {
         </button>
       </div>
       <div className="w-full flex md:flex-row md:p-5 flex-column md:justify-between border-b md:h-[200px] border-zinc-100">
-        <div className="border-2 p-3 w-[25%] text-center rounded-md text-emerald-500 font-bold text-2xl">
-          Total Assets
-          <p>{numAssets}</p>
+        <div className="border-2 p-3 w-[25%] rounded-md">
+          <p className='text-center text-emerald-500 font-bold text-2xl'>Total Assets</p>
+          <p className='text-center'>{numAssets >= 0 ? numAssets : <span>Loading...</span>}</p>
         </div>
         <div className="border-2 p-3 w-[25%] text-center rounded-md text-2xl">
-          Losses
+        <p className='text-center text-[#FA8072] font-bold text-2xl'>Losses</p>
         </div>
         <div className="border-2 p-3 w-[25%] text-center rounded-md text-2xl">
           Total Assets
@@ -92,6 +91,7 @@ function UserPage() {
           enableHiding={false}
           enableGlobalFilter={false}
           enablePagination={false}
+          enableColumnActions={false}
           enableBottomToolbar={false}
           renderTopToolbarCustomActions={() => (
             <div className="w-full grid grid-cols-2 md:grid-cols-3 content-center">
