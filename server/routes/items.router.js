@@ -48,8 +48,10 @@ router.get('/numAssets', rejectUnauthenticated, (req, res) => {
 router.get('/numLosses', rejectUnauthenticated, (req, res) => {
   const queryText = `
   SELECT COUNT(*) FROM "items"
-  JOIN "locations" ON "items".user_id = "locations".user_id
-  WHERE "items".user_id = $1 AND "locations"."isActive" = TRUE;`;
+  JOIN "user" ON "items".user_id = "user".id
+  JOIN "containers" ON "items".container_id = "containers".container_id
+  JOIN "locations" ON "containers".location_id = "locations".location_id
+  WHERE "locations"."isActive" = TRUE AND "locations".user_id = $1 AND "items".state = 'LOST' OR "locations"."isActive" = TRUE AND "locations".user_id = $1 AND "items".state = 'STOLEN';`;
 
   const queryValues = [req.user.id];
 

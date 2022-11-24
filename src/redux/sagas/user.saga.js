@@ -29,6 +29,7 @@ function* fetchUserInfo(){
   yield put({type: 'FETCH_MAIN_LOCATION'})
   yield put({type: "FETCH_RECENT_ITEMS" })
   yield put({type: 'FETCH_NUM_ASSETS' })
+  yield put({type: 'FETCH_LOSSES' })
 }
 
 function* userSaga() {
