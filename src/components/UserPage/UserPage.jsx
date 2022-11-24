@@ -40,7 +40,7 @@ function UserPage() {
     <div>
       <div className="pl-5 mt-[60px] flex md:pt-2 md:pb-2 md:text-left text-center bg-[#74BDCB]">
         {/* bg-zinc-100 */}
-        <h2>
+        <h2 className='ml-auto mr-auto md:ml-0 md:mr-0'>
           Welcome,{" "}
           {String(user.username).charAt(0).toUpperCase() +
             String(user.username).slice(1)}
@@ -60,15 +60,15 @@ function UserPage() {
           Add New Item
         </button>
       </div>
-      <div className="w-full flex md:flex-row md:p-5 flex-column md:justify-between border-b md:h-[200px] border-zinc-100">
-        <div className="border-2 p-3 w-[25%] rounded-md">
-          <p className='text-center text-emerald-500 font-bold text-2xl'>Total Assets</p>
-          <p className='text-center'>{numAssets >= 0 ? numAssets : <span>Loading...</span>}</p>
+      <div className="w-full md:px-[5%] flex md:flex-row p-5 flex-column justify-between border-b md:h-[200px] border-zinc-100">
+        <div className="border-2 p-3 w-[33%] md:w-[28%] rounded-md">
+          <p className='text-center text-emerald-500 font-bold text-lg md:text-2xl'>Total Assets</p>
+          <p className='text-7xl text-center pt-3'>{numAssets >= 0 ? numAssets : <span>Loading...</span>}</p>
         </div>
-        <div className="border-2 p-3 w-[25%] text-center rounded-md text-2xl">
-        <p className='text-center text-[#FA8072] font-bold text-2xl'>Losses</p>
+        <div className="border-2 p-3 w-[33%] md:w-[28%] rounded-md">
+        <p className='text-center text-[#FA8072]font-bold text-lg md:text-2xl'>Losses</p>
         </div>
-        <div className="border-2 p-3 w-[25%] text-center rounded-md text-2xl">
+        <div className="border-2 p-3 w-[33%] md:w-[28%] text-center rounded-md text-lg md:text-2xl">
           Total Assets
         </div>
       </div>

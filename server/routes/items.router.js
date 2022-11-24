@@ -45,6 +45,24 @@ router.get('/numAssets', rejectUnauthenticated, (req, res) => {
     })
 });
 
+router.get('/numLosses', rejectUnauthenticated, (req, res) => {
+  const queryText = `
+  SELECT COUNT(*) FROM "items"
+  JOIN "locations" ON "items".user_id = "locations".user_id
+  WHERE "items".user_id = $1 AND "locations"."isActive" = TRUE;`;
+
+  const queryValues = [req.user.id];
+
+  pool.query(queryText, queryValues)
+    .then(response => {
+      // console.log('data from server is', response.rows[0].count)
+      res.send(response.rows[0].count)
+    }).catch(err => {
+      console.log(err)
+      res.sendStatus(500)
+    })
+});
+
 /**
  * POST route template
  */

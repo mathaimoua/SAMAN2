@@ -22,9 +22,20 @@ function* fetchNumAssets(){
   }
 }
 
+function* fetchLosses(){
+  try{
+    const response = yield axios.get('/api/items/numLosses')
+    // yield console.log('num assets is', response.data)
+    yield put({type: 'SET_LOSSES', payload: response.data})
+  } catch (error) {
+    console.log('Error fetching total number of losses.', error)
+  }
+}
+
 function* itemsSaga() {
   yield takeLatest('FETCH_RECENT_ITEMS', fetchRecentItems);
   yield takeLatest('FETCH_NUM_ASSETS', fetchNumAssets);
+  yield takeLatest('FETCH_LOSSES', fetchLosses);
 }
 
 export default itemsSaga;

@@ -21,7 +21,7 @@ function SideMenu() {
       {user.id && (
         <div
           className={
-            "h-full w-[18%] text-black pt-[60px] absolute bg-zinc-300 hidden md:block max-w-relative min-w-[150px] border-r-[1px] border-zinc-100"
+            "h-full w-[18%] text-black pt-[60px] md:fixed absolute bg-zinc-300 hidden md:block max-w-relative min-w-[150px] border-r-[1px] border-zinc-100"
           }
         >
           <ul>
