@@ -8,6 +8,8 @@ import {
   ArchiveIcon,
   QuestionMarkCircleIcon,
   PencilIcon,
+  UserIcon,
+  OfficeBuildingIcon,
 } from "@heroicons/react/solid";
 
 import { useDispatch } from "react-redux";
@@ -40,6 +42,14 @@ function SideMenu() {
             <li className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500">
               <PencilIcon className="w-6 mr-2" />
               <p className="mt-2">Items</p>
+            </li>
+            <li className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500">
+              <UserIcon className="w-6 mr-2" />
+              <p className="mt-2">Contacts</p>
+            </li>
+            <li className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500">
+              <OfficeBuildingIcon className="w-6 mr-2" />
+              <p className="mt-2">Vendors</p>
             </li>
             <li className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500">
               <QuestionMarkCircleIcon className="w-6 mr-2" />
