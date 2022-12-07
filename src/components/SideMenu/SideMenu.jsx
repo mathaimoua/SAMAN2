@@ -11,10 +11,11 @@ import {
   UserIcon,
   OfficeBuildingIcon,
 } from "@heroicons/react/solid";
-
+import { useHistory } from 'react-router-dom'
 import { useDispatch } from "react-redux";
 
 function SideMenu() {
+  const history = useHistory();
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
 
@@ -27,10 +28,11 @@ function SideMenu() {
           }
         >
           <ul>
-            <li className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500">
+          <a href="#" className="no-underline hover:no-underline ">
+            <li className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500" onClick={history.push('/')}>
               <HomeIcon className="w-6 mr-2" />
               <p className="mt-2">Home</p>
-            </li>
+            </li></a>
             <li className="ml-[0] pl-[8%] mb-2 flex transition ease-in-out duration-200 hover:bg-zinc-500">
               <LocationMarkerIcon className="w-6 mr-2" />
               <p className="mt-2">Locations</p>
