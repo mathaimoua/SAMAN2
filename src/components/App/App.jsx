@@ -20,6 +20,7 @@ import InfoPage from "../InfoPage/InfoPage";
 import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
+import Item from "../Item/Item";
 
 import "../../../src/index.css";
 
@@ -102,6 +103,10 @@ function App() {
               <LandingPage />
             )}
           </Route>
+
+          <ProtectedRoute exact path="/item">
+              <Item/>
+          </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
