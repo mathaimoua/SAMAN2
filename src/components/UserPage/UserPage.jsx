@@ -130,7 +130,7 @@ function UserPage() {
           initialState={{ columnVisibility: { id: false } }}
           muiTableBodyRowProps={({ row }) => ({
             onClick: () => {
-              console.log(row.original.id);
+              console.log(row.original.item_id);
             },
             sx: {
               cursor: "pointer", //you might want to change the cursor too when adding an onClick
