@@ -110,7 +110,9 @@ function App() {
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
+          <div className="w-full md:px-[5%] flex md:flex-row p-5 flex-column justify-between border-b md:h-[800px] border-zinc-100">
             <h1>404</h1>
+            </div>
           </Route>
         </Switch>
         {/* <Footer /> */}

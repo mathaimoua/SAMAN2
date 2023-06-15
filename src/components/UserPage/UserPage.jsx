@@ -62,12 +62,12 @@ function UserPage() {
           {String(user.username).charAt(0).toUpperCase() +
             String(user.username).slice(1)}
           !
-          <p>
+          {/* <p>
             You are currently managing{" "}
             <span className="font-bold italic text-zinc-100">
               {mainLocation.location_name}
             </span>
-          </p>
+          </p> */}
         </h2>
         <button
           type="submit"
@@ -79,15 +79,17 @@ function UserPage() {
       </div>
       <div className="w-full md:px-[5%] flex md:flex-row p-5 flex-column justify-between border-b md:h-[200px] border-zinc-100">
         <div className="border-2 p-3 w-[33%] md:w-[28%] rounded-md">
-          <p className='text-center font-bold text-lg md:text-2xl'>Total Assets</p>
+          <p className='text-center font-bold text-lg md:text-xl'>Total Assets</p>
           <p className='md:text-7xl text-3xl text-center pt-3'>{numAssets >= 0 ? numAssets : <span  className='text-2xl pt-0'>Loading...</span>}</p>
         </div>
         <div className="border-2 p-3 w-[33%] md:w-[28%] rounded-md">
-        <p className='text-center font-bold text-lg md:text-2xl'>Losses</p>
+        <p className='text-center font-bold text-lg md:text-xl'>Losses</p>
         <p className='md:text-7xl text-3xl text-center pt-3 text-[#FA8072]'>{numLosses >= 0 ? numLosses : <span className='text-2xl pt-0'>Loading...</span>}</p>
         </div>
         <div className="border-2 p-3 w-[33%] md:w-[28%] text-center rounded-md text-lg md:text-2xl">
-          Total Assets
+        <p className='text-center font-bold text-lg md:text-xl'>
+          Current Location
+            </p>
           <p className='md:text-7xl text-3xl text-center pt-3'>{mainLocation.location_name}</p>
         </div>
       </div>
@@ -131,6 +133,7 @@ function UserPage() {
           muiTableBodyRowProps={({ row }) => ({
             onClick: () => {
               console.log(row.original.item_id);
+              history.push("/"+row.original.item_id)
             },
             sx: {
               cursor: "pointer", //you might want to change the cursor too when adding an onClick
